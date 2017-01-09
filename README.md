@@ -2,7 +2,7 @@
 This is a docker container, that is capable of running a [OpenRCT2](http://openrct2.org/) server in a headless mode (dedicated Server).
 
 # Usage
-To run this container you have to own the files of the orginal game. Information of how to get the game files on linux can be found [here](https://github.com/OpenRCT2/OpenRCT2/wiki/Installation-on-Linux#installing-the-game). The needed files are listed [here](https://github.com/OpenRCT2/OpenRCT2/wiki/Required-RCT2-files)
+To run this container you have to own the files of the orginal game. Information of how to get the game files on linux can be found [here](https://github.com/OpenRCT2/OpenRCT2/wiki/Installation-on-Linux#installing-the-game). The needed files are listed [here](https://github.com/OpenRCT2/OpenRCT2/wiki/Required-RCT2-files).
 
 ## Build the game
 When building the container, the latest commit from the [OpenRCT2 repository](https://github.com/OpenRCT2/OpenRCT2) is pulled and compiled.
