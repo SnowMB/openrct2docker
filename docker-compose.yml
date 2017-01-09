@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  openrct2:
+    build: .
+    image: openrct2:latest
+    ports: 
+      - ${PORT}:11753
+    volumes:
+      - ${GAME_FOLDER}:/openrct2/original_files/
+      - ${CONFIG_FOLDER}:/openrct2/config/
+      - ${SAVEGAME}:/openrct2/game.sc6
