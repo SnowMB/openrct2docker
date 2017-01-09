@@ -28,16 +28,15 @@ RUN apt-get update && apt-get install --no-install-recommends -y  tar\
 
 ADD ./ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
-RUN 	mkdir -p /openrct2/config /openrct2/original_files /openrct2/save && \
-	git clone https://github.com/OpenRCT2/OpenRCT2.git /openrct2/src && \
-	mkdir /openrct2/src/build
+RUN 	mkdir -p /openrct2/config /openrct2/original_files \
+	&& git clone https://github.com/OpenRCT2/OpenRCT2.git /openrct2/src \
+	&& mkdir /openrct2/src/build \
+	&& cmake -B/openrct2/src/build -H/openrct2/src \
+	&& make -C /openrct2/src/build \
+	&& make -C /openrct2/src/build g2 \
+	&& ln -s /openrct2/src/data /openrct2/src/build/data \
+	&& ln -s /openrct2/src/build/g2.dat /openrct2/src/data/g2.dat
 
-WORKDIR /openrct2/src/build
-RUN 	cmake /openrct2/src && \
-	make && \
-	make g2 && \
-	cp g2.dat /openrct2/src/data/g2.dat && \
-	ln -s /openrct2/src/data /openrct2/src/build/data
 
 ADD ./docker-entrypoint.sh docker-entrypoint.sh
 

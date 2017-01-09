@@ -8,5 +8,5 @@ services:
       - ${PORT}:11753
     volumes:
       - ${GAME_FOLDER}:/openrct2/original_files/
-      - ${CONFIG_FOLDER}:/openrct2/config/
+      - ${CONFIG_FOLDER}:/root/.config/OpenRCT2/
       - ${SAVEGAME}:/openrct2/game.sc6
