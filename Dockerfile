@@ -26,7 +26,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y  tar\
 	git \
 	libssl-dev
 
-ENV GIT_SSL_NO_VERIFY=true
+ADD ./ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
 RUN 	mkdir -p /openrct2/config /openrct2/original_files /openrct2/save && \
 	git clone https://github.com/OpenRCT2/OpenRCT2.git /openrct2/src && \
