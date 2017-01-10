@@ -1,30 +1,7 @@
 
-FROM ubuntu:16.10
-
-ENV DEBIAN_FRONTEND=noninteractive
+FROM openrct2/openrct2:ubuntu_amd64
 
 EXPOSE 11753
-
-
-RUN apt-get update && apt-get install --no-install-recommends -y  tar\
-	wget \
-	cmake \
-	libsdl2-dev \
-	libsdl2-ttf-dev \
-	pkg-config \
-	g++ \
-	gcc \
-	libjansson-dev \
-	libspeex-dev \
-	libspeexdsp-dev \
-	libcurl4-openssl-dev \
-	libcrypto++-dev \
-	libfontconfig1-dev \
-	libfreetype6-dev \
-	libpng-dev \
-	libzip-dev \
-	git \
-	libssl-dev
 
 ADD ./ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
 
